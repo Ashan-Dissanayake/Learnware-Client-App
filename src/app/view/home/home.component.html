@@ -1,0 +1,109 @@
+<mat-grid-list gutterSize="7" [cols]="4" rowHeight="4rem">
+
+  <mat-grid-tile [colspan]="4" [rowspan]="2" >
+    <mat-card> <img src="assets/learnware%20logo.jpg"></mat-card>
+  </mat-grid-tile>
+
+
+  <mat-grid-tile [colspan]="4" [rowspan]="4" id="quicklinks">
+    <mat-card>
+      <mat-card-content><img src="assets/payment.png"></mat-card-content>
+      <mat-card-footer ><a routerLink="payments">Payments</a></mat-card-footer>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-content><img src="assets/register.png"></mat-card-content>
+      <mat-card-footer ><a routerLink="batchregistration" >Assessment</a></mat-card-footer>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-content><img src="assets/studnet.png"></mat-card-content>
+      <mat-card-footer ><a routerLink="students">Students</a></mat-card-footer>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-content><img src="assets/classshedule.png"></mat-card-content>
+      <mat-card-footer ><a routerLink="classes">Classes</a></mat-card-footer>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-content><img src="assets/tutes.png"></mat-card-content>
+      <mat-card-footer ><a routerLink="books">Books</a></mat-card-footer>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-content><img src="assets/attendence.png"></mat-card-content>
+      <mat-card-footer ><a routerLink="attendance">Attendance</a></mat-card-footer>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="4" [rowspan]="2" >
+    <mat-card>
+        Ready for today's sessions ?
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="4" [rowspan]="4" >
+    <mat-card>
+      <mat-card-title>Shaeela Banu</mat-card-title>
+      <mat-card-content >
+        <mat-table [dataSource]="data">
+          <ng-container *ngFor="let column of columns; let i = index;" [matColumnDef]="column">
+            <mat-header-cell *matHeaderCellDef> {{ headers[i] }} </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{ element[binders[i]] }} </mat-cell>
+          </ng-container>
+
+          <!-- Add three additional column definitions for buttons Live Tracker, Swap session, and PSR -->
+          <ng-container matColumnDef="Live Tracker">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              <button mat-raised-button color="primary">Join</button>
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="Swap">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              <button mat-raised-button color="primary">Swap</button>
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="PSR">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              <button mat-raised-button color="primary">PSR</button>
+            </mat-cell>
+          </ng-container>
+
+          <!-- Update the header row and row definitions to include the new column definitions -->
+          <mat-header-row *matHeaderRowDef="columns.concat(['Live Tracker', 'Swap', 'PSR'])"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: columns.concat(['Live Tracker', 'Swap', 'PSR'])"></mat-row>
+        </mat-table>
+
+        <!--          <mat-list>-->
+<!--            <mat-chip-grid>-->
+<!--              <ng-container *ngFor="let message of userspecmessages; let i = index">-->
+<!--                <mat-chip-set>-->
+<!--                  <ng-container *ngIf="i < 4">-->
+<!--                    <mat-chip>-->
+<!--                      <mat-icon matListItemIcon>email</mat-icon>-->
+<!--                      <div matListItemTitle>{{message.name}}</div>-->
+<!--                      <div matListItemLine>{{message.updated | date}}</div>-->
+<!--                    </mat-chip>-->
+<!--                  </ng-container>-->
+<!--                </mat-chip-set>-->
+<!--              </ng-container>-->
+
+<!--              <mat-chip-set>-->
+<!--                <ng-container *ngFor="let button of buttons">-->
+<!--                  <mat-chip>-->
+<!--                    <button mat-raised-button color="primary">{{button.label}}</button>-->
+<!--                  </mat-chip>-->
+<!--                </ng-container>-->
+<!--              </mat-chip-set>-->
+<!--            </mat-chip-grid>-->
+<!--          </mat-list>-->
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

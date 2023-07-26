@@ -1,0 +1,204 @@
+<script src="../employee/employee.component.ts"></script>
+<mat-grid-list [cols]="12" rowHeight="4rem">
+
+  <mat-grid-tile [colspan]="4" [rowspan]="12">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Course Detail</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content id="courseform">
+
+        <mat-form  [formGroup]="form" >
+
+          <mat-form-field appearance="outline">
+            <mat-label>Division</mat-label>
+            <mat-select formControlName="division">
+              <mat-option [value]="null" selected>Not Selected</mat-option>
+              <mat-option *ngFor="let division of divisions" [value]="division">{{division.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Course Category</mat-label>
+            <mat-select formControlName="coursecategory">
+              <mat-option [value]="null" selected>Not Selected</mat-option>
+              <mat-option *ngFor="let coursecategory of coursecategorys" [value]="coursecategory">{{coursecategory.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Course Status</mat-label>
+            <mat-select formControlName="coursestatus">
+              <mat-option [value]="null" selected>Not Selected</mat-option>
+              <mat-option *ngFor="let coursestatus of coursestatus" [value]="coursestatus">{{coursestatus.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Code</mat-label>
+            <input matInput formControlName="code">
+          </mat-form-field>
+
+
+          <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <input matInput formControlName="description">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Date of Introduced</mat-label>
+            <input matInput [matDatepicker]="doi" formControlName="dointroduced">
+            <mat-datepicker-toggle matIconSuffix [for]="doi"></mat-datepicker-toggle>
+            <mat-datepicker #doi></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Credit</mat-label>
+            <input matInput formControlName="credit">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Fee</mat-label>
+            <input matInput formControlName="fee">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Duration Theory</mat-label>
+            <input matInput formControlName="durationtheory">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Duration Practicle</mat-label>
+            <input matInput formControlName="durationpractical">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Coordinator</mat-label>
+            <mat-select formControlName="coordinator">
+              <mat-option [value]="null" selected>Not Selected</mat-option>
+              <mat-option *ngFor="let cordinator of cordinator" [value]="cordinator">{{cordinator.callingname}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Deputy Coordinator</mat-label>
+            <mat-select formControlName="dpcoordinator">
+              <mat-option [value]="null" selected>Not Selected</mat-option>
+              <mat-option *ngFor="let deputycordinator of deputycordinator" [value]="deputycordinator">{{deputycordinator.callingname}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div id="butpanel">
+            <button mat-raised-button (click)="add()"  [disabled]="!enaadd">Add</button>
+            <button mat-raised-button>Clear</button>
+            <button mat-raised-button (click)="update()"  [disabled]="!enaupd">Update</button>
+            <button mat-raised-button (click)="delete()" [disabled]="!enadel">Delete</button>
+          </div>
+
+        </mat-form>
+      </mat-card-content>
+
+
+    </mat-card>
+  </mat-grid-tile>
+
+
+  <mat-grid-tile [colspan]="8" [rowspan]="4">
+    <mat-card id="ssearch">
+      <mat-card-header>
+        <mat-card-title>Course Search</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+
+        <mat-form [formGroup]="ssearch">
+
+          <mat-form-field appearance="outline">
+            <mat-label>Search by Code</mat-label>
+            <input matInput formControlName="sscode">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Search by Course Name</mat-label>
+            <input matInput formControlName="ssname">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Category</mat-label>
+            <mat-select formControlName="sscategory">
+              <mat-option [value]="null" selected>Not Selected</mat-option>
+              <mat-option *ngFor="let coursecategory of coursecategorys" [value]="coursecategory.id">{{coursecategory.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+<!--          <mat-form-field appearance="outline">-->
+<!--            <mat-label>Designation</mat-label>-->
+<!--            <mat-select formControlName="ssdesignation">-->
+<!--              <mat-option [value]="null" selected>Not Selected</mat-option>-->
+<!--&lt;!&ndash;              <mat-option *ngFor="let designation of designations" [value]="designation.id">{{designation.name}}</mat-option>&ndash;&gt;-->
+<!--            </mat-select>-->
+<!--          </mat-form-field>-->
+
+          <div>
+            <button mat-raised-button color="primary" (click)="btnSearchMc()"><mat-icon>search</mat-icon> Search </button>
+            <button mat-raised-button color="primary" (click)="btnSearchClearMc()"><mat-icon>reorder</mat-icon> Clear Search </button>
+          </div>
+
+        </mat-form>
+
+      </mat-card-content>
+
+    </mat-card>
+  </mat-grid-tile>
+
+
+  <mat-grid-tile [colspan]="8" [rowspan]="6">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Course Table</mat-card-title>
+        <div id="loading">
+          <img [src]="imageurl">
+        </div>
+      </mat-card-header>
+
+      <mat-card-content>
+
+        <mat-table [dataSource]="data">
+
+          <ng-container *ngFor="let column of columns;let i = index;" [matColumnDef]="column">
+            <mat-header-cell *matHeaderCellDef> {{headers[i]}} </mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ uiassist.getProperty(element, binders[i]) }} </mat-cell>
+          </ng-container>
+
+          <ng-container *ngFor="let cscolumn of cscolumns;let i = index;" [matColumnDef]="cscolumn">
+            <mat-header-cell *matHeaderCellDef>
+              <mat-form [formGroup]="csearch" class="csearch">
+                <mat-form-field appearance="outline">
+                  <mat-label>{{csprompts[i]}}</mat-label>
+                  <input matInput [formControlName]="cscolumn"
+                         (keyup)="filterTable()">
+                </mat-form-field>
+              </mat-form>
+            </mat-header-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+<!--          <mat-header-row *matHeaderRowDef="cscolumns"></mat-header-row>-->
+          <mat-row *matRowDef="let row; columns: columns;" (click)="fillForm(row)" [ngClass]="{'selected-row': row === selectedrow}"></mat-row>
+
+        </mat-table>
+
+        <mat-paginator [length]="20" [pageSize]="3" [pageSizeOptions]="[3,5,10,20]"></mat-paginator>
+
+      </mat-card-content>
+
+    </mat-card>
+  </mat-grid-tile>
+
+</mat-grid-list>

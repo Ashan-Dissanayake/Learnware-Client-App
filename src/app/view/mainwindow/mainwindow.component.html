@@ -1,0 +1,148 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+
+    <span class="toolbar-left">
+    <button mat-icon-button (click)="opened=!opened" class="btn-nav"><mat-icon>menu</mat-icon></button>
+      <img src="/assets/learnware%20logo.jpg" class="img-logo">
+    </span>
+
+    <span class="toolbar-right">
+      <label class="lbl-user">{{authService.getUsername()}}</label>
+      <img src="/assets/profile.jpg" class="img-user"/>
+      <button mat-icon-button (click)="logout()" class="btn-logout"><mat-icon>exit_to_app</mat-icon> </button>
+    </span>
+
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+
+  <mat-sidenav [(opened)]="opened" mode="side">
+
+    <mat-selection-list [multiple]="false">
+
+      <mat-expansion-panel disabled="disabled">
+        <mat-expansion-panel-header>
+          <mat-list-item routerLink="home"><mat-icon>home</mat-icon>Home</mat-list-item>
+        </mat-expansion-panel-header>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-list-item><mat-icon>widgets</mat-icon>Dashboard</mat-list-item>
+        </mat-expansion-panel-header>
+
+        <mat-list-option routerLink="dashboard">Tutor</mat-list-option>
+        <mat-list-option>Student</mat-list-option>
+        <mat-list-option>Admin</mat-list-option>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-list-item><mat-icon>person</mat-icon>Admin</mat-list-item>
+        </mat-expansion-panel-header>
+
+<!--        <mat-list-option routerLink="employee">Employee</mat-list-option>-->
+<!--        <mat-list-option routerLink="user">User</mat-list-option>-->
+<!--        <mat-list-option routerLink="privilege">Privilege</mat-list-option>-->
+        <mat-list-item *ngFor="let menuItem of menuItems" [disabled]="!menuItem.accessFlag">
+          <a [routerLink]="menuItem.accessFlag ? menuItem.routerLink : null">{{ menuItem.name }}</a>
+        </mat-list-item>
+        <mat-list-option>Emp. Attendance</mat-list-option>
+        <mat-list-option>Task</mat-list-option>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-list-item><mat-icon>person</mat-icon>Academic</mat-list-item>
+        </mat-expansion-panel-header>
+        <mat-list-option routerLink="course">Courses</mat-list-option>
+        <mat-list-option routerLink="class">Class</mat-list-option>
+        <mat-list-option routerLink="classreview">Class Review</mat-list-option>
+        <mat-list-option routerLink="batch">Batch</mat-list-option>
+        <mat-list-option routerLink="student">Student</mat-list-option>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel disabled="disabled">
+        <mat-expansion-panel-header>
+          <mat-list-item><mat-icon>calendar_today</mat-icon>Calendar</mat-list-item>
+        </mat-expansion-panel-header>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-list-item><mat-icon>person_outline</mat-icon>Students</mat-list-item>
+        </mat-expansion-panel-header>
+
+        <mat-list-option>Register</mat-list-option>
+        <mat-list-option>View</mat-list-option>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-list-item><mat-icon>library_books</mat-icon>Lesson</mat-list-item>
+        </mat-expansion-panel-header>
+
+        <mat-list-option>Add</mat-list-option>
+        <mat-list-option>Lesson Library</mat-list-option>
+        <mat-list-option>Lesson Progress</mat-list-option>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel disabled="disabled">
+        <mat-expansion-panel-header>
+          <mat-list-item><mat-icon>class</mat-icon>Sessions</mat-list-item>
+        </mat-expansion-panel-header>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-list-item><mat-icon>person_pin</mat-icon>Tutor</mat-list-item>
+        </mat-expansion-panel-header>
+
+        <mat-list-option><a routerLink="register">Register</a></mat-list-option>
+        <mat-list-option>View</mat-list-option>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-list-item><mat-icon>people</mat-icon>Batch</mat-list-item>
+        </mat-expansion-panel-header>
+
+        <mat-list-option>Register</mat-list-option>
+        <mat-list-option>View</mat-list-option>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel disabled="disabled">
+        <mat-expansion-panel-header>
+          <mat-list-item><mat-icon>perm_contact_calendar</mat-icon>Attendance</mat-list-item>
+        </mat-expansion-panel-header>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel disabled="disabled">
+        <mat-expansion-panel-header>
+          <mat-list-item><mat-icon>notifications</mat-icon>Notification</mat-list-item>
+        </mat-expansion-panel-header>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel disabled="disabled">
+        <mat-expansion-panel-header>
+          <mat-list-item><mat-icon>assignment</mat-icon>Assignment</mat-list-item>
+        </mat-expansion-panel-header>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-list-item><mat-icon>assignment</mat-icon>Reports</mat-list-item>
+        </mat-expansion-panel-header>
+        <mat-list-option routerLink="reportarrears">Pay Arrears</mat-list-option>
+      </mat-expansion-panel>
+
+    </mat-selection-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

@@ -1,0 +1,159 @@
+/* Tool Bar */
+
+mat-toolbar-row {
+  background-color: #19467f;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.toolbar-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+.toolbar-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+.img-logo {
+  height: 50px;
+  border-radius: 5px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+
+.btn-nav.mat-mdc-icon-button {
+  /*background-color: #2b3815;*/
+  background-color: #E0B872;
+  color: #ffffff;
+  vertical-align: middle;
+  box-shadow: 1px 1px 6px #333333;
+  /*border: #c0d9c3 solid 2px;*/
+  border: #FFD700 solid 2px;
+  padding: 10px;
+  --mat-mdc-button-ripple-color: rgba(255, 255, 255, 0.2);
+}
+
+.lbl-user {
+  font-size: 14px;
+  color: white;
+  margin: 0px 5px 0px 0px;
+}
+
+.img-user {
+  height: 50px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.btn-logout {
+  color: white;
+  border-radius: 0px;
+  margin: 0px 0px 0px -5px;
+}
+
+
+/* Side Navigation */
+
+mat-sidenav-container {
+  height: 100%;
+}
+
+mat-sidenav {
+  width: 18%;
+}
+
+/*mat-sidenav a {*/
+/*  font-size: 14px;*/
+/*  text-decoration: none;*/
+/*  color: black;*/
+/*}*/
+
+mat-sidenav mat-icon {
+  font-size: 16px;
+  margin: 0px 0px -10px 0px;
+}
+
+/*mat-nav-list mat-list-item {*/
+/*  height: 35px;*/
+/*  font-size: 14px;*/
+/*  padding: 0px 5px 0px 10px;*/
+
+/*}*/
+
+/*mat-nav-list mat-list-item:hover {*/
+/*  background: #7fa4cd;*/
+/*}*/
+
+/*mat-nav-list mat-expansion-panel {*/
+/*  box-shadow: none;*/
+/*  border-radius: unset;*/
+/*}*/
+
+/*mat-nav-list mat-expansion-panel-header {*/
+/*  height: 35px;*/
+/*  padding: 0 20px 0 0;*/
+/*}*/
+
+/*mat-nav-list mat-expansion-panel-header:hover {*/
+/*  background: #7fa4cd !important;*/
+/*}*/
+
+/*mat-nav-list mat-expansion-panel mat-list-item {*/
+/*  height: 28px;*/
+/*}*/
+
+mat-expansion-panel{
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.mat-expansion-panel-header.mat-expanded {
+  height: 35px !important;
+}
+
+mat-expansion-panel-header{
+  height: 35px;
+  padding-left: 2px !important;
+  font-weight: unset !important;
+}
+
+mat-list-option{
+  padding-left: 30px !important;
+  height: 35px !important;
+  font-size: 15px !important;
+}
+
+
+mat-expansion-panel-header:hover {
+  background: #7fa4cd !important;
+}
+
+mat-list-option:hover{
+  background: #7fa4cd !important;
+}
+
+mat-list-item{
+  height: 35px !important;
+  font-size: 14px !important;
+}
+
+>>> mat-list-item:focus{
+      visibility: hidden !important;
+}
+
+mat-list-option::selection {
+  visibility: hidden !important;
+}
+
+>>> .mat-mdc-list-option .mdc-radio__background {
+  display: none !important;
+}

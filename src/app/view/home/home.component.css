@@ -1,0 +1,98 @@
+mat-grid-list {
+  /*padding: 10% 20% 10% 20% !important;*/
+  margin: 8px;
+}
+
+mat-grid-tile:nth-child(1) mat-card{
+  padding-top: 20px;
+  align-items: center;
+  background-color: #19467f;;
+}
+
+mat-grid-tile:nth-child(4){
+  height: 400px !important;
+}
+
+mat-grid-tile:nth-child(3) mat-card{
+  color: white;
+  padding-top: 55px;
+  font-size: 50px;
+  font-weight: bold;
+  align-items: center;
+  background-color: #19467f;
+}
+
+mat-card {
+  height: 100% !important;
+  width: 100%;
+  margin: 5px;
+  overflow: auto;
+  border-radius: 12px;
+}
+
+mat-card-title{
+  color: white;
+  margin-left: 5px;
+  margin-top: 5px;
+  background-color: #1b4780;
+  border-radius: 6px;
+  padding-left: 10px;
+}
+
+mat-card img{
+  width: 50%;
+  height: 80%;
+}
+
+#quicklinks mat-card img{
+  scale: 210%;
+  padding-left: 18px;
+  padding-top: 15px;
+}
+
+#quicklinks mat-card{
+  height: unset!important;
+  padding-top: 4px;
+  width: 150px;
+  margin: 0 20px 0 20px;
+  border: solid #E0B872;
+}
+
+mat-card-footer{
+  font-size: 18px;
+  margin-top: 55px;
+  text-align: center;
+  background-color: #E0B872;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+mat-card-footer a{
+  text-decoration: none;
+  color: black;
+}
+
+#home{
+  justify-content: center;
+  justify-items: center;
+}
+
+mat-chip-grid mat-chip-set button{
+  margin-left: 15px;
+}
+
+.mat-mdc-chip-set{
+  margin-left: 8px!important;
+  margin-top: 10px;
+}
+
+mat-chip {
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  height: 100% !important;
+  background-color: unset !important;
+}
+
+.mat-mdc-raised-button{
+  background-color: #19467f !important;
+}

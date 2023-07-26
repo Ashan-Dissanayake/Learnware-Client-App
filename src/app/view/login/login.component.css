@@ -1,0 +1,49 @@
+mat-card {
+  width: 400px;
+  height: 400px;
+  border: black;
+  border-radius: 10%;
+  /*box-shadow: black 2px 2px 15px;*/
+}
+
+mat-card-header {
+  background: white;
+  border-radius: 20px 20px 20px 20px  !important;;
+}
+
+mat-card-title img {
+  width: 100%;
+  height: 100%;
+}
+
+mat-card-title p {
+  color: white;
+  text-align: center;
+}
+
+mat-card-content {
+
+  padding: 10%;
+}
+
+mat-card-actions {
+  child-align: middle !important;
+}
+
+mat-card-actions button:nth-child(2) {
+  margin-left: 10px;
+}
+
+button {
+  color: white !important;
+}
+
+button[btn-a] {
+  background: #19467f !important;
+  
+
+
+}
+
+
+
